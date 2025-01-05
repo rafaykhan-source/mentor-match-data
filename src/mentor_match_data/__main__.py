@@ -1,9 +1,8 @@
 """Generates a dummy dataset of people."""
 
 import argparse
-import csv
-from dataclasses import asdict
 
+from mentor_match_data.datawriter import DataWriter
 from mentor_match_data.generators import RandomPersonGenerator
 
 
@@ -25,18 +24,10 @@ def main() -> None:
     """The application entrypoint."""
     args = get_args()
     r = RandomPersonGenerator()
-    with open(args.file_path, "w", newline="") as csvfile:
-        fieldnames = [
-            "first_name",
-            "last_name",
-            "email",
-            "availability",
-        ]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    people = [r.get_person() for _ in range(args.n)]
 
-        writer.writeheader()
-        for _ in range(args.n):
-            writer.writerow(asdict(r.get_person()))
+    w = DataWriter()
+    w.write_people(people, args.file_path)
 
 
 main()

@@ -32,7 +32,7 @@ class RandomPersonGenerator:
         """Returns a random generated availability for a person."""
         return random.sample(
             self.availability_options,
-            random.randint(5, len(self.availability_options)),
+            random.randint(3, 5),
         )
 
     def get_person(self) -> Person:

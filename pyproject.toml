@@ -52,8 +52,3 @@ ignore = ["ANN101"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
-
-[tool.uv]
-dev-dependencies = [
-    "ipykernel>=6.29.5",
-]
