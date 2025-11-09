@@ -1,0 +1,20 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[[package]]
+name = "mentor-match-data"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "names" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "names", specifier = ">=0.3.0" }]
+
+[[package]]
+name = "names"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/44/4e/f9cb7ef2df0250f4ba3334fbdabaa94f9c88097089763d8e85ada8092f84/names-0.3.0.tar.gz", hash = "sha256:726e46254f2ed03f1ffb5d941dae3bc67c35123941c29becd02d48d0caa2a671", size = 789099, upload-time = "2013-05-14T14:55:49.073Z" }
