@@ -20,10 +20,10 @@ class RandomPersonGenerator:
         """Returns the availability opconstations for a person."""
         weekdays = ["M", "T", "W", "Th", "F"]
         self.availability_options = [
-            f"{t}:00-{t+1}:00pm {day}" for day in weekdays for t in range(5, 9)
+            f"{t}:00-{t + 1}:00pm {day}" for day in weekdays for t in range(5, 9)
         ]
         self.availability_options.extend(
-            [f"{t}:00-{t+1}:00pm Sun" for t in range(3, 9)],
+            [f"{t}:00-{t + 1}:00pm Sun" for t in range(3, 9)],
         )
 
         return self.availability_options
